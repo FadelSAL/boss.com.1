@@ -1,0 +1,15 @@
+[
+  {"id":1,"name":"منتج تجريبي","description":"وصف المنتج التجريبي","price":10000,"imageUrl":"https://via.placeholder.com/400x300","category":"rice"},
+  {"id":2,"name":"zczxxckiu","description":"sdfsdfsfs","price":1000,"imageUrl":"Pictures/_ZnhMqKvIWc.jpg","category":"breakfast"},
+  {"id":3,"name":"zxfhaxfdafd","description":"zczxczxcxzcz","price":10000000,"imageUrl":"Pictures/photo_2025-12-06_15-06-55.jpg","category":"rice"},
+  {"id":5,"name":"منتج تجريبي - شوكولاتة","description":"شوكولاتة حليب عالية الجودة، 100 غرام","price":15000,"imageUrl":"https://images.unsplash.com/photo-1548907042-0a1484d9d12d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80","category":"chocolate"},
+  {"id":6,"name":"zxjh","description":"nnbffff","price":10000,"imageUrl":"Pictures/photo_2025-12-06_15-06-55.jpg","category":"rice"},
+  {"id":7,"name":"zxfhaxfdafd","description":"ggggggtt","price":100000,"imageUrl":"Pictures/photo_2025-12-06_15-06-55.jpg","category":"coffee"},
+  {"id":8,"name":"zxjh","description":"eeee","price":122222,"imageUrl":"Pictures/photo_2025-12-06_15-06-55.jpg","category":"breakfast"},
+  {"id":9,"name":"fffffffffffffffffffff","description":"jfjdfkdf","price":10000000,"imageUrl":"Pictures/photo_2025-12-06_15-06-55.jpg","category":"chocolate"},
+  {"id":10,"name":"zxfhaxfdafd","description":"jjjjjjjjjjjjjjjjj","price":1000000000000000,"imageUrl":"Pictures/photo_2025-12-06_15-06-55.jpg","category":"breakfast"},
+  {"id":11,"name":"ffffffffffffffffffff","description":"ggggggggggggggg","price":10,"imageUrl":"Pictures/photo_2025-12-06_15-06-55.jpg","category":"breakfast"},
+  {"id":12,"name":"fefefefefe","description":"ffefefefefejj","price":10,"imageUrl":"Pictures/photo_2025-12-06_15-06-55.jpg","category":"breakfast"},
+  {"id":13,"name":"feo","description":"hhhhhhh","price":10000000,"imageUrl":"Pictures/IMG_20251217_221644_528.png","category":"coffee"},
+  {"id":14,"name":"feo","description":"222","price":2222222222222,"imageUrl":"Pictures/IMG_20251217_225358_389.png","category":"breakfast"}
+]

@@ -1,0 +1,16 @@
+[
+  {"id":2,"key":"aleppo","name":"حلب","cost":100000000},
+  {"id":3,"key":"homs","name":"حمص","cost":10000},
+  {"id":4,"key":"hama","name":"حماة","cost":10000},
+  {"id":5,"key":"latakia","name":"اللاذقية","cost":12000},
+  {"id":6,"key":"tartus","name":"طرطوس","cost":12000},
+  {"id":7,"key":"daraa","name":"درعا","cost":8000},
+  {"id":8,"key":"as-sweida","name":"السويداء","cost":8000},
+  {"id":9,"key":"raqqa","name":"الرقة","cost":20000},
+  {"id":10,"key":"deir-ez-zor","name":"دير الزور","cost":25000},
+  {"id":11,"key":"al-hasakah","name":"الحسكة","cost":25000},
+  {"id":12,"key":"idlib","name":"إدلب","cost":15000},
+  {"id":13,"key":"rif-dimashq","name":"ريف دمشق","cost":7000},
+  {"id":14,"key":"quneitra","name":"القنيطرة","cost":10000},
+  {"id":15,"key":"prov_1765964582342","name":"دمشق","cost":5000}
+]

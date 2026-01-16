@@ -1,0 +1,969 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary: #000000;
+    --secondary: #FFFFFF;
+    --accent: #FF0000;
+    --light: #F5F5F5;
+    --dark: #000000;
+    --success: #00AA00;
+    --gray: #333333;
+    --admin: #FF6B00;
+}
+
+body {
+    background-color: var(--secondary);
+    color: var(--primary);
+    line-height: 1.6;
+    background-image: linear-gradient(to bottom, var(--secondary) 90%, var(--light) 100%);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* الترويسة */
+header {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid var(--accent);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-main {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px var(--primary);
+}
+
+.logo-subtitle {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-right: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+    background-color: var(--accent);
+}
+
+.nav-links i {
+    margin-left: 5px;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--accent);
+    color: var(--secondary);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* المحتوى الرئيسي */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    color: var(--secondary);
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 5px solid var(--accent);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    color: var(--secondary);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--secondary);
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-color: var(--primary);
+}
+
+.btn-secondary {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent);
+    color: var(--secondary);
+    border-color: var(--accent);
+}
+
+.btn-success {
+    background-color: var(--success);
+    border-color: var(--success);
+}
+
+.btn-success:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-warning {
+    background-color: var(--admin);
+    border-color: var(--admin);
+}
+
+.btn-warning:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    border-color: #25D366;
+}
+
+.whatsapp-btn:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* تصنيفات المنتجات الغذائية */
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 2rem 0;
+}
+
+.category {
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 0.9rem 1.2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    min-width: 150px;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--accent);
+    color: var(--secondary);
+    border-color: var(--accent);
+}
+
+.category.active {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-color: var(--primary);
+}
+
+/* المنتجات */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.product-card {
+    background: var(--secondary);
+    border-radius: 10px;
+
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    border: 2px solid var(--gray);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--gray);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.product-description {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.product-price {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-to-cart i {
+    margin-left: 8px;
+}
+
+.add-to-cart:hover {
+    background-color: var(--accent);
+}
+
+/* سلة التسوق */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-content {
+    background-color: var(--secondary);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 2rem;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 3px solid var(--accent);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.cart-header h2 {
+    color: var(--primary);
+}
+
+.close-cart {
+    background: var(--accent);
+    color: var(--secondary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-items {
+    margin-bottom: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light);
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-left: 1rem;
+    border: 2px solid var(--gray);
+}
+
+.item-info h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.item-price {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.quantity {
+    margin: 0 10px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.remove-item {
+    background: var(--accent);
+    color: var(--secondary);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cart-summary {
+    background-color: var(--light);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.delivery-cost {
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+}
+
+.cart-grand-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--accent);
+    color: var(--primary);
+}
+
+/* نموذج الطلب مع اختيار المحافظة */
+.checkout-form {
+    background-color: var(--light);
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+.checkout-form h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--gray);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.form-control:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.province-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.province-option {
+    padding: 10px;
+    border: 2px solid var(--gray);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: var(--secondary);
+}
+
+.province-option:hover {
+    border-color: var(--accent);
+}
+
+.province-option.selected {
+    background-color: var(--accent);
+    color: var(--secondary);
+    border-color: var(--accent);
+}
+
+/* التذييل */
+footer {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 3rem 0 1.5rem;
+    margin-top: 3rem;
+    border-top: 5px solid var(--accent);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    color: var(--secondary);
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-info i {
+    margin-left: 10px;
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--secondary);
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--accent);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* لوحة التحكم المخفية */
+.admin-panel {
+    display: none;
+}
+
+.admin-access {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.admin-btn {
+    background-color: var(--admin);
+    color: var(--secondary);
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.admin-btn:hover {
+    background-color: var(--primary);
+    transform: scale(1.05);
+}
+
+/* تنبيهات */
+.alert {
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display: none;
+    border-right: 5px solid var(--accent);
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: var(--success);
+}
+
+.alert.info {
+    background-color: #e7f3ff;
+    color: var(--primary);
+    border-color: var(--accent);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-img {
+        height: 50px;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-links li {
+        margin: 0 0.7rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .categories {
+        gap: 0.5rem;
+    }
+
+    .category {
+        min-width: 130px;
+        padding: 0.7rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .products {
+
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-details {
+        margin-bottom: 1rem;
+    }
+
+    .item-actions {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .province-options {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.empty-store {
+    text-align: center;
+    padding: 3rem;
+    background: var(--secondary);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    grid-column: 1 / -1;
+    border: 2px dashed var(--gray);
+}
+
+.empty-store i {
+    font-size: 4rem;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+/* معاينة رسالة الطلب */
+.message-preview {
+    background: linear-gradient(180deg, #fff, var(--light));
+    border: 2px dashed var(--gray);
+    padding: 12px;
+    border-radius: 6px;
+    color: var(--primary);
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    max-height: 180px;
+    overflow: auto;
+}
+
+/* مؤقت (تنبيه) */
+.alert {
+    display: block !important;
+    opacity: 1;
+}
+
+.empty-store h3 {
+    color: var(--primary);
+}
+
+.delivery-info {
+    background-color: var(--light);
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    border-right: 5px solid var(--accent);
+}
+
+.delivery-info h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.delivery-info p {
+    color: var(--gray);
+}
+
+/* نماذج لوحة التحكم */
+.admin-form {
+    background-color: var(--light);
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    border: 2px solid var(--admin);
+}
+
+.admin-form h3 {
+    color: var(--admin);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--admin);
+    padding-bottom: 0.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px;
+    text-align: right;
+    border: 1px solid var(--light);
+}
+
+.admin-table th {
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: var(--light);
+}
+
+.table-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.table-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.edit-btn {
+    background-color: var(--admin);
+    color: var(--secondary);
+}
+
+.delete-btn {
+    background-color: var(--accent);
+
+    color: var(--secondary);
+}
+
+/* تحديثات الواتساب */
+.whatsapp-update-message {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-left: 4px solid #25D366;
+}
+
+/* شاشة التحميل */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--light);
+    border-top: 5px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

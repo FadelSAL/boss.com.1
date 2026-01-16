@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOSS Store - Buy Only Superior Stuffs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="BOSS Store - Buy Only Superior Stuffs">
+    <meta property="og:description"
+        content="تسوق أفضل المنتجات الغذائية بجودة عالية وأسعار منافسة. التوصيل لجميع محافظات سوريا.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://boss-store-sy.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+    <!-- شاشة التحميل المؤقتة
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3>جارٍ تحميل متجر BOSS...</h3>
+        </div>
+    </div> -->
+
+    <!-- الترويسة -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo-text">
+                        <div class="logo-main">BOSS</div>
+                        <div class="logo-subtitle">Buy Only Superior Stuffs</div>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="#products"><i class="fas fa-utensils"></i> المنتجات</a></li>
+                    <li><a href="#delivery"><i class="fas fa-truck"></i> التوصيل</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone"></i> اتصل بنا</a></li>
+                    <li class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم البطل -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>BOSS Store - Buy Only Superior Stuffs</h1>
+            <p>نقدم لكم أفضل المنتجات الغذائية بجودة عالية. طلباتكم تصل إليكم أينما كنتم في سوريا</p>
+            <a href="#products" class="btn">تسوق الآن</a>
+        </div>
+    </section>
+
+    <!-- التصنيفات الغذائية المعدلة -->
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 1rem; color: var(--primary);">تصنيفات المنتجات</h2>
+        <div class="categories">
+            <div class="category active" data-category="all">الكل</div>
+            <div class="category" data-category="breakfast">الفطور والمنتجات القابلة للدهن</div>
+            <div class="category" data-category="chocolate">الشوكولاتة والحلويات ورقائق البطاطس</div>
+            <div class="category" data-category="frozen">منتجات مجمدة ومبردة</div>
+            <div class="category" data-category="rice">الأرز والحبوب والمعكرونة</div>
+            <div class="category" data-category="drinks">الماء والمشروبات والعصائر</div>
+            <div class="category" data-category="coffee">القهوة والشاي</div>
+        </div>
+    </section>
+
+    <!-- المنتجات -->
+    <section class="container" id="products">
+        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">منتجاتنا</h2>
+        <div class="products" id="productsContainer">
+            <!-- سيتم إضافة المنتجات ديناميكياً -->
+        </div>
+    </section>
+
+    <!-- معلومات التوصيل -->
+    <section class="container" id="delivery">
+        <div class="delivery-info">
+            <h4><i class="fas fa-truck"></i> معلومات التوصيل</h4>
+            <p>تكلفة التوصيل تختلف حسب المحافظة. سيتم حساب التكلفة تلقائياً عند اختيار محافظتك أثناء عملية الشراء.</p>
+        </div>
+    </section>
+
+    <!-- سلة التسوق -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2><i class="fas fa-shopping-cart"></i> سلة التسوق</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- سيتم إضافة عناصر السلة ديناميكياً -->
+            </div>
+
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>المجموع:</span>
+                    <span id="cartTotal">0 ل.س</span>
+                </div>
+                <div class="delivery-cost">
+                    <span>تكلفة التوصيل:</span>
+                    <span id="deliveryCost">0 ل.س</span>
+                </div>
+                <div class="cart-grand-total">
+                    <span>المجموع الكلي:</span>
+                    <span id="grandTotal">0 ل.س</span>
+                </div>
+            </div>
+
+            <div class="checkout-form">
+                <h3>تفاصيل الطلب والتوصيل</h3>
+                <form id="checkoutForm">
+                    <div class="whatsapp-update-message">
+                        <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                        <strong>ملاحظة:</strong> سيتم إرسال طلبك على الواتساب مباشرة إلى رقم المتجر:
+                        <strong>0935791571</strong>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerName"><i class="fas fa-user"></i> الاسم الكامل *</label>
+                        <input type="text" id="customerName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone"><i class="fas fa-phone"></i> رقم الهاتف *</label>
+                        <input type="tel" id="customerPhone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerAddress"><i class="fas fa-map-marker-alt"></i> العنوان التفصيلي *</label>
+                        <textarea id="customerAddress" class="form-control" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-map"></i> اختر المحافظة *</label>
+                        <div class="province-options" id="provinceOptions">
+                            <!-- سيتم إضافة المحافظات ديناميكياً -->
+                        </div>
+                        <input type="hidden" id="selectedProvince" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerNotes"><i class="fas fa-edit"></i> ملاحظات إضافية</label>
+                        <textarea id="customerNotes" class="form-control" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn whatsapp-btn" style="width: 100%;">
+                        <i class="fab fa-whatsapp"></i> إرسال الطلب على الواتساب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- التذييل -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo-container">
+                        <div class="logo-text">
+                            <div class="logo-main">BOSS</div>
+                            <div class="logo-subtitle">متجر المنتجات الفاخرة</div>
+                        </div>
+                    </div>
+                    <p>متجر BOSS يقدم أفضل المنتجات الغذائية الفاخرة في سوريا. جودة عالية وأسعار منافسة.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1FxDCZqQve/" target="_blank" title="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/boss_store_jh?igsh=N2ptdDBha2pteW04" target="_blank"
+                            title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/963935791571" target="_blank" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#delivery">التوصيل</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>معلومات الاتصال</h3>
+                    <div class="contact-info">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>0935791571</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-clock"></i>
+                        <span>خدمة العملاء: 24/7</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-truck"></i>
+                        <span>التوصيل لجميع محافظات سوريا</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/boss_store_jh?igsh=N2ptdDBha2pteW04" target="_blank"
+                            style="color: #ddd; text-decoration: none;">@boss_store_jh</a>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/share/1FxDCZqQve/" target="_blank"
+                            style="color: #ddd; text-decoration: none;">BOSS Store</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; 2025 BOSS Store</p>
+                <p>متجر المنتجات الفاخرة</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">
+                    تابعنا على:
+                    <a href="https://www.instagram.com/boss_store_jh?igsh=N2ptdDBha2pteW04" target="_blank"
+                        style="color: #E4405F; margin: 0 5px; text-decoration: none;">إنستغرام</a> |
+                    <a href="https://www.facebook.com/share/1FxDCZqQve/" target="_blank"
+                        style="color: #1877F2; margin: 0 5px; text-decoration: none;">فيسبوك</a> |
+                    <a href="https://wa.me/963935791571" target="_blank"
+                        style="color: #25D366; margin: 0 5px; text-decoration: none;">واتساب</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- زر واتساب عائم -->
+    <a href="https://wa.me/963935791571" class="whatsapp-float" target="_blank" title="تواصل معنا على الواتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+
+
+    <!-- تنبيهات -->
+    <!-- <div class="alert success" id="successAlert">
+        تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.
+    </div> -->
+
+    <script src="main.js"></script>
+</body>
+
+</html>
