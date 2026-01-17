@@ -4,7 +4,7 @@ const cors = require('cors');
 const { db, init } = require('./db');
 
 const app = express();
-const PORT = 5500;
+const PORT = process.env.PORT || 5500;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -91,3 +91,4 @@ app.delete('/api/provinces/:id', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
 });
+
